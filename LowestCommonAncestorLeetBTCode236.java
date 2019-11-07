@@ -1,5 +1,13 @@
 package com.savitha.leetcode;
-
+//Need to update the correct code
+/*
+ * Algo: 
+ * Input: Node node,int n1,int n2 Output L return node
+ * If Node is null return Null
+ * If n1.data and n2.data are smaller than root LCA in left (recursive).
+ * If n1.data and n2.data are bigger than root LCA in right (recursive).
+ * 
+ * */
 public class LowestCommonAncestorLeetBTCode236 {
 
 static BTNode1 root;  
