@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import com.savitha.leetcode.MergeIntervalLeetC.IntervalComparator;
+
 
 /*
  * LeetCode 252
@@ -28,36 +28,31 @@ public class MeetingRoomsLeetC {
 		Interval i2 = new Interval(5, 10);
 		Interval i3 = new Interval(15, 20);
 		MeetingRoomsLeetC mr = new MeetingRoomsLeetC();
-		Interval[] intervalList= {i1,i2,i3};
-		
-		
-		
-	
-		//Interval[] intervalarray=new Interva
-		mr.canAttendMeetings(intervalList);
-		//mr.canAttendMeetings(Arrays.asList(i1, i2, i3));
-
+		Interval[] intervalList = { i1, i2, i3 }; 
+		Boolean result=mr.canAttendMeetings(intervalList);
+		System.out.println("result:"+result);
 	}
-	
+
 	private boolean canAttendMeetings(Interval[] interval) {
 		if (interval == null || interval.length <= 1) {
 			return false;
 		}
 
 		Arrays.sort(interval, new IntervalCompare());
-		
+
 		Interval last = interval[0];
 		for (int i = 0; i < interval.length; i++) {
 			Interval curr = interval[i];
 			if (curr.start < last.end) {
 				return false;
 			} else {
-				
+
 				return true;
 			}
 
 		}
-		
+		return false;
+
 	}
 
 	private class IntervalCompare implements Comparator<Interval> {
